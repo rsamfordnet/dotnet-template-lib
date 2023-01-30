@@ -11,7 +11,6 @@
 
 [fuget]: https://www.fuget.org/packages/MyProject
 [fuget-badge]: https://www.fuget.org/packages/MyProject/badge.svg
-~~~~
 
 TODO: Add a short description of what the project is about.
 
