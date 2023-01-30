@@ -1,7 +1,7 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
 	<!-- https://github.com/dotnet/reproducible-builds/tree/main/Documentation/Reproducible-MSBuild/Techniques -->
-	<Sdk Name="DotNet.ReproducibleBuilds.Isolated" Version="1.1.1" />
+	<Sdk Name="DotNet.ReproducibleBuilds.Isolated" />
 
 	<PropertyGroup Label="DotNet">
 		<!-- https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-options/language -->
