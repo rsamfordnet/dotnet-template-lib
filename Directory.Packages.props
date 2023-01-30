@@ -1,5 +1,6 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
+	<!-- https://learn.microsoft.com/en-us/nuget/consume-packages/central-package-management -->
 	<!-- https://devblogs.microsoft.com/nuget/introducing-central-package-management/ -->
 	<!-- https://blog.jetbrains.com/dotnet/2022/11/07/nuget-central-package-management-comes-to-jetbrains-rider/ -->
 	<PropertyGroup>
