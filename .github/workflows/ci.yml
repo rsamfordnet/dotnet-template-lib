@@ -65,6 +65,9 @@ jobs:
           github.event_name == 'push' &&
           github.ref_type == 'tag'
 
+      # By default, GITHUB_TOKEN has read-only permissions so this step will fail
+      # To fix this, go to the following page and set "Workflow permissions" to have read and write permissions
+      # https://github.com/{USER}/{PROJECT}/settings/actions
       - name: dotnet nuget push to github registry
         run: dotnet nuget push "./dist/*.nupkg" --skip-duplicate
         if: |
