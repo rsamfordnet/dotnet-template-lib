@@ -1,9 +1,5 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
-	<PropertyGroup>
-		<MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
-	</PropertyGroup>
-
 	<!-- https://github.com/dotnet/reproducible-builds/tree/main/Documentation/Reproducible-MSBuild/Techniques -->
 	<Sdk Name="DotNet.ReproducibleBuilds.Isolated" Version="1.1.1" />
 
@@ -40,6 +36,7 @@
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 	</PropertyGroup>
 
+
 	<PropertyGroup Label="JetBrains">
 		<DefaultItemExcludes>$(DefaultItemExcludes);*.DotSettings</DefaultItemExcludes>
 	</PropertyGroup>
@@ -57,7 +54,7 @@
 
 	<ItemGroup Label="Versioning" Condition="'$(CI)' == 'true'">
 		<!-- https://github.com/adamralph/minver -->
-		<PackageReference Include="MinVer" Version="4.3.0" PrivateAssets="All"/>
+		<PackageReference Include="MinVer" PrivateAssets="All"/>
 	</ItemGroup>
 
 	<PropertyGroup Label="Versioning">
@@ -68,7 +65,7 @@
 	<ItemGroup Label="SourceLink" Condition=" '$(CI)' == 'true' ">
 		<!-- https://github.com/dotnet/sourcelink -->
 		<!-- https://github.com/dotnet/reproducible-builds -->
-		<PackageReference Include="DotNet.ReproducibleBuilds" Version="1.1.1" PrivateAssets="All" />
+		<PackageReference Include="DotNet.ReproducibleBuilds" PrivateAssets="All" />
 	</ItemGroup>
 
 	<ItemGroup Label="DebugFriendAssemblies" Condition=" '$(BuildConfiguration)' == 'Debug' ">
@@ -82,14 +79,14 @@
 	</ItemGroup>
 
 	<ItemGroup Label="GlobalAnalyzers">
-		<PackageReference Include="Nullable.Extended.Analyzer" Version="1.10.4539">
+		<PackageReference Include="Nullable.Extended.Analyzer">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
 		</PackageReference>
 	</ItemGroup>
 
 	<ItemGroup Label="GlobalAnnotations">
-		<PackageReference Include="JetBrains.Annotations" Version="2022.3.1" />
+		<PackageReference Include="JetBrains.Annotations" />
 		<Using Include="JetBrains.Annotations" />
 	</ItemGroup>
 
@@ -109,9 +106,9 @@
 	</PropertyGroup>
 
 	<ItemGroup Label="FodyWeavers">
-		<PackageReference Include="Fody" Version="6.6.4" PrivateAssets="all" />
-		<PackageReference Include="ConfigureAwait.Fody" Version="3.3.2" PrivateAssets="all" />
-		<PackageReference Include="NullGuard.Fody" Version="3.1.1" PrivateAssets="all" />
+		<PackageReference Include="Fody" PrivateAssets="all" />
+		<PackageReference Include="ConfigureAwait.Fody" PrivateAssets="all" />
+		<PackageReference Include="NullGuard.Fody" PrivateAssets="all" />
 		<AssemblyAttribute Include="Fody.ConfigureAwaitAttribute">
 			<_Parameter1>False</_Parameter1>
 			<_Parameter1_TypeName>System.Boolean</_Parameter1_TypeName>
